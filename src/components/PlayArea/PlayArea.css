@@ -1,0 +1,11 @@
+#playArea {
+  background-color: aqua;
+  margin: 1rem 0.5rem 1rem 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-content: space-around;
+  flex-wrap: wrap;
+  flex-grow: 3;
+  min-width: 60%;
+  max-width: 65%;
+}
