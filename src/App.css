@@ -2,25 +2,21 @@ html,
 body {
   margin: 0;
   padding: 0;
-}
-
-body {
-  height: 100vh;
-  width: 100vw;
+  font-family: 'Acme', sans-serif;
 }
 
 #gameContainer {
-  margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   display: flex;
-  justify-content: space-around;
-  align-items: stretch;
-  border: solid 1px black;
-  border-radius: 5px;
-  height: 75%;
-  width: 75%;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(
+      0deg,
+      rgba(202, 59, 2, 0.45),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url(./assets/images/texture_background.jpg);
+  background-size: cover;
+  background-position: center;
 }

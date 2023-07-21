@@ -1,11 +1,11 @@
 import './ClickCard.css';
 
-const ClickCard = () => {
-  return (
-    <div id="clickCard">
-      <img src="src/assets/images/dota.png" alt="dota icon" />
-    </div>
-  );
+interface IProps {
+  image: string;
+}
+
+const ClickCard = ({ image }: IProps) => {
+  return <img src={`src/assets/images/${image}.png`} alt={`${image} image`} />;
 };
 
 export default ClickCard;
