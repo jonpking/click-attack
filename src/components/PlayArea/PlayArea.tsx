@@ -63,7 +63,7 @@ const PlayArea = ({ setScore, score, setHighScore, highScore }: IProps) => {
     setChosenHeroes((chosenHeroes) => [...chosenHeroes, hero]);
     setHeroArray(shuffleHeroes(heroArray));
     if (!chosenHeroes.includes(hero)) {
-      //change current score to green if correct guess clicked 
+      //change current score to green if correct guess clicked
       document.getElementById('currentScore')!.style.color = '#068302';
       const newScore = score + 1;
       setScore(newScore);
@@ -79,6 +79,7 @@ const PlayArea = ({ setScore, score, setHighScore, highScore }: IProps) => {
       const newHighScore = score;
       setHighScore(newHighScore);
       setScore(0);
+      setChosenHeroes([]);
       //after 250ms return current and high score to white
       setTimeout(() => {
         document.getElementById('currentScore')!.style.color = '#ebebeb';
@@ -90,6 +91,7 @@ const PlayArea = ({ setScore, score, setHighScore, highScore }: IProps) => {
       //change current score to red if wrong guess clicked
       document.getElementById('currentScore')!.style.color = '#830202';
       setScore(0);
+      setChosenHeroes([]);
       //after 250ms change current score color back to white
       setTimeout(() => {
         document.getElementById('currentScore')!.style.color = '#ebebeb';
