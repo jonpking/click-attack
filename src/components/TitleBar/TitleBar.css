@@ -23,7 +23,11 @@
   margin-left: 5px;
 }
 
-.titleText {
+.question:hover {
+  cursor: pointer;
+}
+
+.titleTextContainer {
   justify-content: center;
 }
 

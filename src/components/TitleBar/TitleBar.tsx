@@ -9,9 +9,14 @@ const TitleBar = ({ score, highScore }: IProps) => {
   return (
     <div id="titleBarContainer">
       <div className="positioningContainer">
-        <span className="material-symbols-outlined question">help</span>
+        <span
+          title="Instructions"
+          className="material-symbols-outlined question"
+        >
+          help
+        </span>
       </div>
-      <div className="positioningContainer titleText">
+      <div className="positioningContainer titleTextContainer">
         <h1>CLICK ATTACK</h1>
       </div>
       <div className="scoreContainer positioningContainer">
