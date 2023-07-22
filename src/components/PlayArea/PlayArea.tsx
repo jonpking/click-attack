@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ClickCard from '../ClickCard/ClickCard';
 import './PlayArea.css';
 
@@ -46,20 +46,47 @@ const shuffleHeroes = (array: string[]) => {
   return shuffledArray;
 };
 
-const PlayArea = () => {
-  const [heroArray, setHeroArray] = useState(shuffleHeroes(seededArray));
+interface IProps {
+  setScore: (newScore: number) => void;
+  score: number;
+  setHighScore: (newHighScore: number) => void;
+  highScore: number;
+}
 
-  const handleClick = (e: React.MouseEvent) => {
+const PlayArea = ({ setScore, score, setHighScore, highScore }: IProps) => {
+  const [heroArray, setHeroArray] = useState(shuffleHeroes(seededArray));
+  const [chosenHeroes, setChosenHeroes] = useState<string[]>([]);
+
+  const handleClick = (e: React.MouseEvent, hero: string) => {
     e.preventDefault();
+    console.log(hero);
+    setChosenHeroes((chosenHeroes) => [...chosenHeroes, hero]);
     setHeroArray(shuffleHeroes(heroArray));
-    console.log(e.target);
+    if (!chosenHeroes.includes(hero)) {
+      const newScore = score + 1;
+      setScore(newScore);
+    } else if (score > highScore) {
+      const newHighScore = score;
+      setHighScore(newHighScore);
+      setScore(0);
+    } else {
+      setScore(0);
+    }
   };
+
+  useEffect(() => {
+    console.log(chosenHeroes, 'chosen');
+  }, [chosenHeroes]);
 
   return (
     <div id="playAreaContainer">
       <div id="playArea">
         {heroArray.map((hero) => (
-          <ClickCard onClick={handleClick} image={hero} key={hero} />
+          <ClickCard
+            onClick={(e) => handleClick(e, hero)}
+            image={hero}
+            key={hero}
+          />
         ))}
       </div>
     </div>
