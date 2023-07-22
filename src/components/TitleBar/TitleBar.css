@@ -1,6 +1,6 @@
-#titleContainer {
+#titleBarContainer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 65%;
   height: 3rem;
@@ -11,7 +11,40 @@
   border-radius: 5px;
 }
 
+.positioningContainer {
+  width: 33%;
+  display: flex;
+}
+
+.question {
+  font-size: 2.25rem;
+  display: flex;
+  justify-self: start;
+  margin-left: 5px;
+}
+
+.titleText {
+  justify-content: center;
+}
+
 h1,
 h2 {
-  margin: 0 1rem;
+  margin: 0 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.scoreContainer {
+  display: flex;
+  justify-content: end;
+}
+
+.trophy {
+  font-size: 2.25rem;
+  display: flex;
+}
+
+.star {
+  font-size: 2rem;
+  padding-right: 2px;
 }

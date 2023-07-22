@@ -7,10 +7,22 @@ interface IProps {
 
 const TitleBar = ({ score, highScore }: IProps) => {
   return (
-    <div id="titleContainer">
-      <h2>High Score: {highScore}</h2>
-      <h1>CLICK ATTACK</h1>
-      <h2>Current Score: {score}</h2>
+    <div id="titleBarContainer">
+      <div className="positioningContainer">
+        <span className="material-symbols-outlined question">help</span>
+      </div>
+      <div className="positioningContainer titleText">
+        <h1>CLICK ATTACK</h1>
+      </div>
+      <div className="scoreContainer positioningContainer">
+        <h2 id="highScore">
+          <span className="material-symbols-outlined trophy">trophy</span>{' '}
+          {highScore}
+        </h2>
+        <h2 id="currentScore">
+          <span className="material-symbols-outlined star">stars</span> {score}
+        </h2>
+      </div>
     </div>
   );
 };

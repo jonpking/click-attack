@@ -63,14 +63,37 @@ const PlayArea = ({ setScore, score, setHighScore, highScore }: IProps) => {
     setChosenHeroes((chosenHeroes) => [...chosenHeroes, hero]);
     setHeroArray(shuffleHeroes(heroArray));
     if (!chosenHeroes.includes(hero)) {
+      //change current score to green if correct guess clicked 
+      document.getElementById('currentScore')!.style.color = '#068302';
       const newScore = score + 1;
       setScore(newScore);
+      //after 250ms return current score color to white
+      setTimeout(() => {
+        document.getElementById('currentScore')!.style.color = '#ebebeb';
+      }, 250);
     } else if (score > highScore) {
+      //change current score to red if wrong guess clicked
+      document.getElementById('currentScore')!.style.color = '#830202';
+      //change high score to green if new high score is set
+      document.getElementById('highScore')!.style.color = '#068302';
       const newHighScore = score;
       setHighScore(newHighScore);
       setScore(0);
+      //after 250ms return current and high score to white
+      setTimeout(() => {
+        document.getElementById('currentScore')!.style.color = '#ebebeb';
+      }, 250);
+      setTimeout(() => {
+        document.getElementById('highScore')!.style.color = '#ebebeb';
+      }, 250);
     } else {
+      //change current score to red if wrong guess clicked
+      document.getElementById('currentScore')!.style.color = '#830202';
       setScore(0);
+      //after 250ms change current score color back to white
+      setTimeout(() => {
+        document.getElementById('currentScore')!.style.color = '#ebebeb';
+      }, 250);
     }
   };
 
