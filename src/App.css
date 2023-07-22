@@ -16,7 +16,8 @@ body {
       rgba(202, 59, 2, 0.45),
       rgba(0, 0, 0, 0.6)
     ),
-    url(./assets/images/texture_background.jpg);
+    /* url(./assets/images/texture_background.jpg); */
+      url(/images/texture_background.jpg);
   background-size: cover;
   background-position: center;
 }

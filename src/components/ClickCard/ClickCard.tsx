@@ -9,7 +9,7 @@ const ClickCard = ({ image, onClick }: IProps) => {
   return (
     <img
       onClick={onClick}
-      src={`src/assets/images/${image}.png`}
+      src={`/images/${image}.png`}
       alt={`${image} image`}
     />
   );
